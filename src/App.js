@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
- import {Navigation} from './Components/Navigation';
+import {Navigation} from './Components/NavBar/Navigation';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import {About} from './Components/Tabs/About'
+import {India} from './Components/Tabs/India'
+import {World} from './Components/Tabs/World'
+import {Myth} from './Components/Tabs/Myth'
+class App extends React.Component {
 
-import {About} from './Components/About'
-import {India} from './Components/India'
-import {World} from './Components/World'
-import {Myth} from './Components/Myth'
-
-function App() {
+  render(){
   return (
     <BrowserRouter>
     <div className="App">
@@ -17,13 +17,13 @@ function App() {
        <Switch>
          <Route path='/' component={About} exact/>
          <Route path='/India' component={India}/>
-         <Route path='World' component={World} />
-         <Route path='/Myth' component={Myth} />
+         <Route path='/World' component={World} />
+         <Route path='/MythBusters' component={Myth} />
        </Switch>
       </header>
     </div>
     </BrowserRouter>
   );
 }
-
+}
 export default App;
