@@ -15,13 +15,16 @@ export const Picker = ({handleCountryChange}) => {
 
 return (
     <div>
+      <h5 className={styles.divv}><b>&#9898;<u>Search Country</u>&#9898;</b></h5>
     <FormControl className={styles.formControl}>
+      
       <NativeSelect defaultValue="" onChange={(e)=>handleCountryChange(e.target.value)}>
         <option value="global">Global</option>
         {fetchedCountries.map((country, i) => <option key={i} value={country}>{country}</option>)}
       </NativeSelect>
     </FormControl>
     </div>
+    
   )
 }
 export default Picker;
