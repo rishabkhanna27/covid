@@ -75,6 +75,10 @@ handleCountryChange = async(country) =>{
            <Infoo data={data}/>
 
            <Barr data={data}/>
+           {/* <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+           <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+           <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+           <br></br><br></br><br></br><br></br><br></br><br></br><br></br> */}
            <FooterPage/>
            </div>
             )

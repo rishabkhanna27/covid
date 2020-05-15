@@ -1,9 +1,10 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import styles from './Footer.module.css';
 
-export const FooterPage = () => {
+export const FooterPageIndia = () => {
   return (
-    <div>
+    <div className={styles.container}>
     <MDBFooter color="blue" className="font-small pt-4 bg-dark mt-4">
       <MDBContainer fluid className="text-center bg-info text-md-left">
         <MDBRow>
@@ -23,4 +24,4 @@ export const FooterPage = () => {
   );
 }
 
-export default FooterPage;
+export default FooterPageIndia;

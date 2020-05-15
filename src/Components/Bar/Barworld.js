@@ -42,8 +42,18 @@ const barChart = (
   );
 
   return (
+
+    <div>
+    {/* <div className={styles.contain}>
+    <p>sxxx</p><br></br>
+    <p>sxxx</p><br></br>
+    <p>sxxx</p><br></br>
+    <p>sxxx</p><br></br>
+
+    </div> */}
     <div className={styles.container}>
       {barChart}
+    </div>
     </div>
   );
 };

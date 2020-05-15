@@ -56,6 +56,7 @@ export const Chart = () => {
   );
 
   return (
+
     <div className={styles.container}>
       { lineChart}
     </div>
