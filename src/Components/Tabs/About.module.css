@@ -1,0 +1,41 @@
+.container {
+    background-image: url('cvBKGD.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed; 
+    height: 2500%;
+    background-size: 100% 100%;
+  }
+.head{
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(225, 255, 177);
+}
+.cardss{
+    margin: 1%;
+    color: black;
+    text-align: center;
+  }
+  .hov:hover{
+    box-shadow:5px 10px 20px 1px rgba(255, 255, 255, 0.835) !important;
+  }
+.main{
+    color: rgb(15, 17, 16);
+    margin: 3%;
+     background-color: rgba(255, 255, 255, 0.486);  
+    font-size: large;
+    text-align: center;
+}
+.header{
+    font-size: 44px;
+  }
+  .buttonn{
+    width: 100%;
+    height:100%;
+  }
+  img{
+    height:450px;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+

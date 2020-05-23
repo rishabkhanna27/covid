@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import {About} from './Components/Tabs/About'
 import {India} from './Components/Tabs/India'
 import {World} from './Components/Tabs/World'
-import {Myth} from './Components/Tabs/MythBuster/Myth'
+import {Myth} from './Components/Tabs/Myth'
 class App extends React.Component {
 
   render(){
