@@ -4,12 +4,11 @@
   margin-bottom: 1% !important;
   margin-left: 30% !important;
   margin-right: 30% !important;
-  background-color: black; /* For browsers that do not support gradients */
-  background-image: linear-gradient(white, rgb(226, 224, 224)); /* Standard syntax (must be last) */
+  background-color: rgb(231, 226, 219);
   border-color: black;
 }
 .divv{
   margin-top: 2% !important;
-  font-size: xx-large;
+  font-size: x-large;
   text-align: center;
 }
