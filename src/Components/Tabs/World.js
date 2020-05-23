@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Info} from '../Cards/CardsWorld'
 import {Chart} from '../Charts/Worldchart'
 import {Picker} from '../Picker/Worldpicker'
@@ -12,6 +12,7 @@ import axios from 'axios';
 const url = 'https://disease.sh/v2/all';
 const urll = 'https://covid19.mathdro.id/api/daily';
 const urlll = 'https://disease.sh/v2/countries';
+
 
 export const fetchData = async (country) => {
   let ChangeUrl = url;
@@ -40,7 +41,8 @@ export const fetchDailyData = async () => {
   export const fetchCountries = async (country) => {
     try {
         const  {data} = await axios.get(urlll);
-        return data.map(({country}) => country);
+        // console.log(data);
+       return data.map(({country}) => country);
     } catch (error) {
         return error;
     }
@@ -71,7 +73,13 @@ handleCountryChange = async(country) =>{
             <div>
            <Info data={data}/>
            <Chart data={data}/>
-           <Picker handleCountryChange={this. handleCountryChange}/>
+         
+        <div className="cent">
+          .
+        <p><b><u>GO COVID-19 <span role="img" aria-label="house">&#128548;</span></u></b></p>
+         .
+        </div>
+           <Picker handleCountryChange={this.handleCountryChange}/>
            <Infoo data={data}/>
 
            <Barr data={data}/>

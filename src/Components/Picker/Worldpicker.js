@@ -11,11 +11,11 @@ export const Picker = ({handleCountryChange}) => {
     }
     fetchApi();
 }, [setFetchedCountries]);
-//console.log(fetchedCountries);
+// console.log(fetchedCountries);
 
 return (
     <div>
-      <h5 className={styles.divv}><b>&#9898;<u>Search Country</u>&#9898;</b></h5>
+      <h1 className={styles.divv}><b><span role="img" aria-label="house">&#9898;</span><u>Search Country</u><span role="img" aria-label="house">&#9898;</span></b></h1>
     <FormControl className={styles.formControl}>
       
       <NativeSelect defaultValue="" onChange={(e)=>handleCountryChange(e.target.value)}>

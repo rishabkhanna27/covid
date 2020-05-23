@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import {Navigation} from './Components/NavBar/Navigation';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import {About} from './Components/Tabs/About'
+import {About} from './Components/Tabs/About/About'
 import {India} from './Components/Tabs/India'
 import {World} from './Components/Tabs/World'
-import {Myth} from './Components/Tabs/Myth'
+import {Myth} from './Components/Tabs/MythBuster/Myth'
 class App extends React.Component {
 
   render(){

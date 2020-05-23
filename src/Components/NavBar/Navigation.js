@@ -9,7 +9,7 @@ export class Navigation extends Component{
             <div>
             <Navbar bg="dark" expands="lg">
             <Navbar.Brand className="text-white">CT
-        </Navbar.Brand>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav>

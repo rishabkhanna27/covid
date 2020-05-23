@@ -1,26 +1,10 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Line, Bar} from 'react-chartjs-2';
+import React from 'react';
+import {Bar} from 'react-chartjs-2';
 import styles from './Bar.module.css';
 
-import { fetchDailyData } from '../Tabs/World';
+export const Barr = ({ data: { cases, recovered, deaths, country }}) => { 
 
-
-export const Barr = ({ data: { cases, recovered, deaths, country }}) => {
-  const [dailyData, setDailyData] = useState({});
-
-  useEffect(() => {
-    const fetchMyAPI = async () => {
-      const initialDailyData = await fetchDailyData();
-
-      setDailyData(initialDailyData);
-    };
-
-    fetchMyAPI();
-  }, []);
-
-  
-//console.log(cases, recovered, deaths);
-const barChart = (
+  const barChart = (
     cases ? (
       <Bar
         data={{
@@ -35,15 +19,17 @@ const barChart = (
         }}
         options={{
           legend: { display: false },
-          // title: { display: true, text: `Country Name ${country}` },
         }}
       />
     ) : null
   );
 
   return (
+
+    <div>
     <div className={styles.container}>
       {barChart}
+    </div>
     </div>
   );
 };
