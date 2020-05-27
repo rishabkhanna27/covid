@@ -5,10 +5,10 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import {About} from './Components/Tabs/About/About'
 import {India} from './Components/Tabs/India'
 import {World} from './Components/Tabs/World'
-import {Formdata} from './Components/Tabs/Form'
-import {DataRed} from './Components/Tabs/DataRed'
-import {DataGreen} from './Components/Tabs/DataGreen'
-import {DataOrange} from './Components/Tabs/DataOrange'
+import {Formdata} from './Components/Tabs/Form/Form'
+import {DataRed} from './Components/Tabs/Form/DataRed'
+import {DataGreen} from './Components/Tabs/Form/DataGreen'
+import {DataOrange} from './Components/Tabs/Form/DataOrange'
 
 
 import {Myth} from './Components/Tabs/MythBuster/Myth'

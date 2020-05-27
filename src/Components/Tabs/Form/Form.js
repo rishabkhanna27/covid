@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserTie, faMobileAlt, faHandSpock } from '@fortawesome/fontawesome-free-solid'
 import { Form, Col, InputGroup, Button } from 'react-bootstrap'
-import {FooterPage} from '../Footerfile/Footer'
+import {FooterPage} from '../../Footerfile/Footer'
  
 export class Formdata extends Component {
     constructor(props){
@@ -71,11 +71,11 @@ export class Formdata extends Component {
             window.open ('./DataRed','_self',false)
         // if((obj.symptoms==='Cough' || obj.symptoms==='Fever' || obj.symptoms==='BreathingIssue' || obj.symptoms==='breathingIssue' || obj.symptoms==='cough' || obj.symptoms==='fever' || obj.symptoms==='Breathingissue' || obj.symptoms==='breathingissue') && ((obj.crowd==='Yes' || obj.crowd==='yes' ) || (obj.travel==='Yes' || obj.travel==='yes' )))
         // window.open ('./DataOrange','_self',false)
-        if((obj.symptoms==='Cough' || obj.symptoms==='Fever' || obj.symptoms==='BreathingIssue' || obj.symptoms==='breathingIssue' || obj.symptoms==='cough' || obj.symptoms==='fever' || obj.symptoms==='Breathingissue' || obj.symptoms==='breathingissue') && ((obj.crowd==='No' || obj.crowd==='no' ) || (obj.travel==='No' || obj.travel==='no' )))
+        else if((obj.symptoms==='Cough' || obj.symptoms==='Fever' || obj.symptoms==='BreathingIssue' || obj.symptoms==='breathingIssue' || obj.symptoms==='cough' || obj.symptoms==='fever' || obj.symptoms==='Breathingissue' || obj.symptoms==='breathingissue') && ((obj.crowd==='No' || obj.crowd==='no' ) || (obj.travel==='No' || obj.travel==='no' )))
         window.open ('./DataOrange','_self',false)
-        if((obj.symptoms==='None' || obj.symptoms==='none' ) && ( obj.crowd==='no' || obj.crowd==='No' ) && ( obj.travel==='no' || obj.travel==='No'))
+        else if((obj.symptoms==='None' || obj.symptoms==='none' ) && ( obj.crowd==='no' || obj.crowd==='No' ) && ( obj.travel==='no' || obj.travel==='No'))
             window.open ('./DataGreen','_self',false)
-        if((obj.symptoms==='None' || obj.symptoms==='none' ) && (( obj.crowd==='yes' || obj.crowd==='Yes' ) || ( obj.travel==='yes' || obj.travel==='Yes')))
+        else if((obj.symptoms==='None' || obj.symptoms==='none' ) && (( obj.crowd==='yes' || obj.crowd==='Yes' ) || ( obj.travel==='yes' || obj.travel==='Yes')))
         window.open ('./DataOrange','_self',false)
         }
         
