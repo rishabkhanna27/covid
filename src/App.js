@@ -5,6 +5,12 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import {About} from './Components/Tabs/About/About'
 import {India} from './Components/Tabs/India'
 import {World} from './Components/Tabs/World'
+import {Formdata} from './Components/Tabs/Form'
+import {DataRed} from './Components/Tabs/DataRed'
+import {DataGreen} from './Components/Tabs/DataGreen'
+import {DataOrange} from './Components/Tabs/DataOrange'
+
+
 import {Myth} from './Components/Tabs/MythBuster/Myth'
 class App extends React.Component {
 
@@ -16,6 +22,10 @@ class App extends React.Component {
        <Navigation/>
        <Switch>
          <Route path='/' component={About} exact/>
+         <Route path='/DataGreen' component={DataGreen}/>
+         <Route path='/DataOrange' component={DataOrange}/>
+         <Route path='/DataRed' component={DataRed}/>
+         <Route path='/Form' component={Formdata}/>
          <Route path='/India' component={India}/>
          <Route path='/World' component={World} />
          <Route path='/MythBusters' component={Myth} />

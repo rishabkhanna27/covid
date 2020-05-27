@@ -12,7 +12,6 @@ const colorInterpolator = (caseType, t) => {
       return;
   }
 };
-
 const caseColor = (caseType = '') => {
   switch (caseType) {
     case 'confirmed':
@@ -21,16 +20,8 @@ const caseColor = (caseType = '') => {
       return;
   }
 };
-
 function ChoroplethMap({
-  statistic,
-  mapData,
-  currentMap,
-  changeMap,
-  regionHighlighted,
-  setRegionHighlighted,
-  mapOption,
-  isCountryLoaded,
+  statistic,mapData,currentMap,regionHighlighted,setRegionHighlighted,mapOption,isCountryLoaded,
 }) {
   const svgRef = useRef(null);
 
@@ -58,7 +49,6 @@ function ChoroplethMap({
     );
 
     const svg = d3.select(svgRef.current);
-
     if (!svg.attr('viewBox')) {
       const {
         width: widthDefault,
@@ -78,7 +68,6 @@ function ChoroplethMap({
     const projection = d3.geoMercator().fitSize([width, height], topology);
     const path = d3.geoPath(projection);
 
-    // Add id to each feature
     let features =
       currentMap.stat !== MAP_STATISTICS.HOTSPOTS
         ? currentMap.view === MAP_VIEWS.STATES
@@ -94,10 +83,6 @@ function ChoroplethMap({
             ...topojson.feature(
               geoData,
               geoData.objects[mapMeta.graphObjectStates]
-            ).features,
-            ...topojson.feature(
-              geoData,
-              geoData.objects[mapMeta.graphObjectDistricts]
             ).features,
           ];
 
@@ -136,15 +121,6 @@ function ChoroplethMap({
         let n;
         {
           const state = d.properties.st_nm;
-          const district = d.properties.district;
-          if (district)
-            n =
-              mapData[state] &&
-              mapData[state][district] &&
-              mapData[state][district][mapOption]
-                ? mapData[state][district][mapOption]
-                : 0;
-          else
             n =
               mapData[state] && mapData[state][mapOption]
                 ? mapData[state][mapOption]
@@ -192,7 +168,6 @@ function ChoroplethMap({
     mapMeta,
     currentMap,
     setRegionHighlighted,
-    changeMap,
     isCountryLoaded,
     statistic,
     mapData,
@@ -210,7 +185,6 @@ function ChoroplethMap({
           .selectAll('path')
           .each(function (d) {
             const highlighted =
-              district === d.properties?.district &&
               state === d.properties.st_nm;
             if (highlighted) this.parentNode.appendChild(this);
             d3.select(this).attr('stroke-opacity', highlighted ? 1 : 0);
@@ -221,15 +195,13 @@ function ChoroplethMap({
 
   useEffect(() => {
     if (!geoDataResponse.data) return;
-    highlightRegionInMap(regionHighlighted.state, regionHighlighted.district);
+    highlightRegionInMap(regionHighlighted.state);
   }, [
     geoDataResponse.data,
     highlightRegionInMap,
     regionHighlighted.state,
-    regionHighlighted.district,
     mapOption,
   ]);
-
   return (
     <React.Fragment>
       <div className="svg-parent fadeInUp" >

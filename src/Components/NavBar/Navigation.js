@@ -15,6 +15,7 @@ export class Navigation extends Component{
             <Nav>
                 
             <NavLink className="d-inline p-2 bg-dark text-white" to="/">About</NavLink>
+            <NavLink className="d-inline p-2 bg-dark text-white" to="/Form">Test Yourself</NavLink>
             <NavLink className="d-inline p-2 bg-dark text-white" to="/India">Covid India</NavLink>
             <NavLink className="d-inline p-2 bg-dark text-white" to="/World">Covid World</NavLink>
             <NavLink className="d-inline p-2 bg-dark text-white" to="/MythBusters">Myth Busters</NavLink>

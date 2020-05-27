@@ -1270,7 +1270,7 @@ table {
   background-color: rgba(41, 130, 182, 0.89);
 }
 .last-update{
-  font-family: 'Times New Roman', Times, serif;;
+  font-family: 'archia';
   color: red;
   font-size: large;
 }
@@ -1279,4 +1279,47 @@ table {
 }
 .last{
   font-size: medium;
+}
+.form{
+  background-image: url('./Components/assets/back.jpg');
+  background-repeat: repeat;
+  background-attachment: fixed; 
+  height: 3000%;
+  background-size: 80% 100%;
+  text-align: center;
+  font-family: 'archia';
+  // height: 900px;
+
+.info{
+  background-color: rgba(255, 255, 255, 0.158); 
+margin-left: 36%;
+height: 85%;
+color: rgb(241, 241, 241);
+margin-right: 36%;
+padding-top: 2%;
+padding-bottom: 2%;
+
+.gender{
+  padding-left: 22%;
+}
+}
+.top{
+  text-align: center;
+
+  font-size: 300%;
+  color: rgb(0, 255, 128);
+  font-weight: 900;
+}
+
+
+.heading{
+  font-size: large;
+  text-align: left;
+  font-weight: 900;
+  margin-left: 3%;
+
+}
+.radio{
+  margin-left: 9%;
+}
 }
