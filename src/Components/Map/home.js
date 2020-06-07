@@ -55,19 +55,6 @@ export function Home(props) {
     <React.Fragment>
       <div className="Home">
         <div className="home-left">
-          {stateDistrictWiseData && (
-            <Table
-              states={states}
-              summary={false}
-              districts={stateDistrictWiseData}
-              regionHighlighted={regionHighlighted}
-              setRegionHighlighted={setRegionHighlighted}
-              onHighlightState={onHighlightState}
-            />
-          )}
-        </div>
-        <div className="home-right">
-          <React.Fragment>
             {fetched && (
               <MapExplorer
                 mapName={'India'}
@@ -79,7 +66,20 @@ export function Home(props) {
                 mapOption={mapOption}
               />
             )}
-          </React.Fragment>
+        </div>
+        <div className="home-left">
+          {/* <React.Fragment> */}
+          {stateDistrictWiseData && (
+            <Table
+              states={states}
+              summary={false}
+              districts={stateDistrictWiseData}
+              regionHighlighted={regionHighlighted}
+              setRegionHighlighted={setRegionHighlighted}
+              onHighlightState={onHighlightState}
+            />
+          )}
+          {/* </React.Fragment> */}
         </div>
       </div>
     </React.Fragment>

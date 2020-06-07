@@ -7,7 +7,7 @@ import * as topojson from 'topojson';
 const colorInterpolator = (caseType, t) => {
   switch (caseType) {
     case 'confirmed':
-      return d3.interpolateGreens(t * 2.5);
+      return d3.interpolatePurples(t * 3.0);
     default:
       return;
   }

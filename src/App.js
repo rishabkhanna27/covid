@@ -6,10 +6,7 @@ import {About} from './Components/Tabs/About/About'
 import {India} from './Components/Tabs/India'
 import {World} from './Components/Tabs/World'
 import {Formdata} from './Components/Tabs/Form/Form'
-import {DataRed} from './Components/Tabs/Form/DataRed'
-import {DataGreen} from './Components/Tabs/Form/DataGreen'
-import {DataOrange} from './Components/Tabs/Form/DataOrange'
-
+import {View} from './Components/Tabs/list/View'
 
 import {Myth} from './Components/Tabs/MythBuster/Myth'
 class App extends React.Component {
@@ -21,14 +18,13 @@ class App extends React.Component {
       <header className="App-header">
        <Navigation/>
        <Switch>
-         <Route path='/' component={About} exact/>
-         <Route path='/DataGreen' component={DataGreen}/>
-         <Route path='/DataOrange' component={DataOrange}/>
-         <Route path='/DataRed' component={DataRed}/>
-         <Route path='/Form' component={Formdata}/>
-         <Route path='/India' component={India}/>
-         <Route path='/World' component={World} />
-         <Route path='/MythBusters' component={Myth} />
+       <Route path='/Covid-19-Tracker/' component={India} exact/>
+         <Route path='/Covid-19-Tracker/About' component={About} />
+         <Route path='/Covid-19-Tracker/Form' component={Formdata}/>
+         <Route path='/Covid-19-Tracker/World' component={World}  />
+         <Route path='/Covid-19-Tracker/MythBusters' component={Myth} />
+         <Route path='/Covid-19-Tracker/View' component={View} />
+
        </Switch>
       </header>
     </div>

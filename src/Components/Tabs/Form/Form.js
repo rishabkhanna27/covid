@@ -3,15 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserTie, faMobileAlt, faHandSpock } from '@fortawesome/fontawesome-free-solid'
 import { Form, Col, InputGroup, Button } from 'react-bootstrap'
 import {FooterPage} from '../../Footerfile/Footer'
- 
+import Swal from 'sweetalert2'
+import axios from 'axios'
+
 export class Formdata extends Component {
     constructor(props){
         super(props);
         
         this.state = {
-            name: '',
-            number: '',
-            email: '',
+            fname: '',
+            pnumber: '',
             age: '',
             gender: '',
             travel: '',
@@ -23,19 +24,18 @@ export class Formdata extends Component {
     handleFormSubmit( event ) {
         event.preventDefault();
         const obj ={
-            name: this.state.name,
-            number: this.state.number,
-            email: this.state.email,
+            fname: this.state.fname,
+            pnumber: this.state.pnumber,
             age: this.state.age,
             gender: this.state.gender,
             travel: this.state.travel,
             crowd: this.state.crowd,
             symptoms: this.state.symptoms,
         }
-        if(!obj.name)
+        if(!obj.fname)
         alert("Plaease Fill The Name");
         else{
-        if(!obj.number)
+        if(!obj.pnumber)
         alert("Plaease Fill The Number");
         else{
         if(!obj.age)
@@ -53,7 +53,7 @@ export class Formdata extends Component {
         if(!obj.symptoms)
         alert("Plaease Fill The Symptoms");
         }}}}}}
-        if(obj.number.length>10000000000)
+        if(5555555555>obj.pnumber.length>10000000000)
         alert("Enter A Valid Number");
         if(obj.age>100)
         alert("Enter A Valid Age");
@@ -68,21 +68,64 @@ export class Formdata extends Component {
         alert("Enter A Valid Symptom");
         else{
         if((obj.symptoms==='Cough' || obj.symptoms==='Fever' || obj.symptoms==='BreathingIssue' || obj.symptoms==='breathingIssue' || obj.symptoms==='cough' || obj.symptoms==='fever' || obj.symptoms==='Breathingissue' || obj.symptoms==='breathingissue') && (obj.crowd==='Yes' || obj.crowd==='yes' ) && (obj.travel==='Yes' || obj.travel==='yes' ))
-            window.open ('./DataRed','_self',false)
-        // if((obj.symptoms==='Cough' || obj.symptoms==='Fever' || obj.symptoms==='BreathingIssue' || obj.symptoms==='breathingIssue' || obj.symptoms==='cough' || obj.symptoms==='fever' || obj.symptoms==='Breathingissue' || obj.symptoms==='breathingissue') && ((obj.crowd==='Yes' || obj.crowd==='yes' ) || (obj.travel==='Yes' || obj.travel==='yes' )))
-        // window.open ('./DataOrange','_self',false)
+
+        Swal.fire({
+            html: ' <br/>You are advised for testing as your infection risk is high.<br/> Please call the toll free help line<b> --> 1075 </b> to shedule your testing. <br/>Do isolate yourself and Log temperature, avoid contacting with anyone.<br/> <br/><b># Stay Home Stay Safe <br/> Central Helpline Number <br/>for corona-virus --> +91-11-23978046</b>',
+            title: 'You Are At a High Risk From Corona Virus',
+            icon: 'error',
+            showCancelButton: false,
+            confirmButtonText: 'OK',
+            footer: 'Made by Rishab Khanna',
+          })
+        
         else if((obj.symptoms==='Cough' || obj.symptoms==='Fever' || obj.symptoms==='BreathingIssue' || obj.symptoms==='breathingIssue' || obj.symptoms==='cough' || obj.symptoms==='fever' || obj.symptoms==='Breathingissue' || obj.symptoms==='breathingissue') && ((obj.crowd==='No' || obj.crowd==='no' ) || (obj.travel==='No' || obj.travel==='no' )))
-        window.open ('./DataOrange','_self',false)
+
+        Swal.fire({
+            html: ' <br/>You have a chance to get infected by Covid-19 So please take care of your health and get your health checkup as soon as possible <br/>Avoid any kind of contact with anyone even with your family before consulting a doctor.<br/> <br/><b># Stay Home Stay Safe <br/> Central Helpline Number <br/>for corona-virus --> +91-11-23978046</b>',
+            title: 'You Have Medium Risk From Corona Virus',
+            icon: 'warning',
+            showCancelButton: false,
+            confirmButtonText: 'OK',
+            footer: 'Made by Rishab Khanna',
+          })
+
         else if((obj.symptoms==='None' || obj.symptoms==='none' ) && ( obj.crowd==='no' || obj.crowd==='No' ) && ( obj.travel==='no' || obj.travel==='No'))
-            window.open ('./DataGreen','_self',false)
+
+        Swal.fire({
+            html: ' <br/> With timely medical intervention, safety and with good hygiene we can beat the spread of Coronavirus.<br/>Please help us to fight against Covid-19 by staying at home and taking care of yourself and your Nation. <br/> <br/><b># Stay Home Stay Safe <br/> Central Helpline Number <br/>for corona-virus --> +91-11-23978046</b>',
+            title: 'You Have Low Risk From Corona Virus',
+            icon: 'success',
+            showCancelButton: false,
+            confirmButtonText: 'OK',
+            footer: 'Made by Rishab Khanna',
+          })
+        
         else if((obj.symptoms==='None' || obj.symptoms==='none' ) && (( obj.crowd==='yes' || obj.crowd==='Yes' ) || ( obj.travel==='yes' || obj.travel==='Yes')))
-        window.open ('./DataOrange','_self',false)
+       
+        Swal.fire({
+            html: ' <br/>You have a chance to get infected by Covid-19 So please take care of your health and get your health checkup as soon as possible <br/>Avoid any kind of contact with anyone even with your family before consulting a doctor.<br/> <br/><b># Stay Home Stay Safe <br/> Central Helpline Number <br/>for corona-virus --> +91-11-23978046</b>',
+            title: 'You Have Medium Risk From Corona Virus',
+            icon: 'warning',
+            showCancelButton: false,
+            confirmButtonText: 'OK',
+            footer: 'Made by Rishab Khanna',
+          })
+
+
+
+       
+    //    console.log(obj);
+       
+       axios.post('/test/index.php', obj)
+        .then(Response =>
+            console.log(Response.data));
+
         }
+
         
         
-            this.setState({name: '' })
-            this.setState({number: ''})
-            this.setState({email: ''})
+            this.setState({fname: '' })
+            this.setState({pnumber: ''})
             this.setState({age: ''})
             this.setState({gender: ''})
             this.setState({travel: ''})
@@ -92,7 +135,7 @@ export class Formdata extends Component {
   }
   render() {
     return (
-<div className="form">
+    <div className="form">
           <div className="top">Covid-19 Health Tracker</div>
           <div className="info">
        <Form onSubmit={this.onSubmit} >
@@ -108,9 +151,9 @@ export class Formdata extends Component {
                                 type="text"
                                 placeholder="Full Name"
                                 
-                                id="name"
-                                value={this.state.name}
-                                onChange={e => this.setState({ name: e.target.value })}
+                                id="fname"
+                                value={this.state.fname}
+                                onChange={e => this.setState({ fname: e.target.value })}
                                 />
                         </InputGroup>
                     </Form.Group>
@@ -123,12 +166,12 @@ export class Formdata extends Component {
                             </InputGroup.Prepend>
                             <Form.Control
                             required
-                                type="number"
+                                type="pnumber"
                                 placeholder="Mobile Number"
                                 
-                                id="number"
-                                value={this.state.number}
-                                onChange={e => this.setState({ number: e.target.value })}
+                                id="pnumber"
+                                value={this.state.pnumber}
+                                onChange={e => this.setState({ pnumber: e.target.value })}
                             />
                         </InputGroup>
                     </Form.Group>
