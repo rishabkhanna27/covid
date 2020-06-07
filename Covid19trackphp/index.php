@@ -1,23 +1,41 @@
 <?php 
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json");
-
 $servername = "localhost";
 $username   = "root";
 $password   = "pass";
 $dbname     = "form";
 $conn = new mysqli($servername, $username, $password, $dbname);
+
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 else
-echo"Working";
-    // $sql = "INSERT INTO userdata (email, username)
-    //     VALUES ('".$_POST['myEmail']."', '".$_POST['myUsername']."')";
-    // if (mysqli_query($conn,$sql)) {
-    // $data = array("data" => "You Data added successfully");
-    //     echo json_encode($data);
-    // } else {
-    //     echo "Error: " . $sql . "<br>" . $conn->error;
-    // }
+{
+    $postdata = file_get_contents("php://input");
+    if(isset($postdata) && !empty($postdata))
+    {
+        $request = json_decode($postdata);
+            print_r($request);
+            $fname = $request->fname;
+            $pnumber = $request->pnumber;
+            $age = $request->age;
+            $gender = $request->gender;
+            $travel = $request->travel;
+            $crowd = $request->crowd;
+            $symptoms = $request->symptoms;
+
+            	 $sql = "INSERT INTO `formdata` (`fname`,`pnumber`,`age`,`gender`,`travel`,`crowd`,`symptoms`)
+                 VALUES ('{$fname}','{$pnumber}','{$age}','{$gender}','{$travel}','{$crowd}','{$symptoms}')";
+
+
+        if(mysqli_query($conn , $sql))
+        {
+            http_response_code(201);
+        }
+        else
+        {
+            http_response_code(422);
+        }
+    }
+}
 ?>
