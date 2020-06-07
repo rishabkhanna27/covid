@@ -75,7 +75,6 @@ export class Formdata extends Component {
             icon: 'error',
             showCancelButton: false,
             confirmButtonText: 'OK',
-            footer: 'Made by Rishab Khanna',
           })
         
         else if((obj.symptoms==='Cough' || obj.symptoms==='Fever' || obj.symptoms==='BreathingIssue' || obj.symptoms==='breathingIssue' || obj.symptoms==='cough' || obj.symptoms==='fever' || obj.symptoms==='Breathingissue' || obj.symptoms==='breathingissue') && ((obj.crowd==='No' || obj.crowd==='no' ) || (obj.travel==='No' || obj.travel==='no' )))
@@ -86,7 +85,6 @@ export class Formdata extends Component {
             icon: 'warning',
             showCancelButton: false,
             confirmButtonText: 'OK',
-            footer: 'Made by Rishab Khanna',
           })
 
         else if((obj.symptoms==='None' || obj.symptoms==='none' ) && ( obj.crowd==='no' || obj.crowd==='No' ) && ( obj.travel==='no' || obj.travel==='No'))
@@ -97,7 +95,6 @@ export class Formdata extends Component {
             icon: 'success',
             showCancelButton: false,
             confirmButtonText: 'OK',
-            footer: 'Made by Rishab Khanna',
           })
         
         else if((obj.symptoms==='None' || obj.symptoms==='none' ) && (( obj.crowd==='yes' || obj.crowd==='Yes' ) || ( obj.travel==='yes' || obj.travel==='Yes')))
@@ -108,7 +105,6 @@ export class Formdata extends Component {
             icon: 'warning',
             showCancelButton: false,
             confirmButtonText: 'OK',
-            footer: 'Made by Rishab Khanna',
           })
 
 
