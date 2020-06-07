@@ -10,18 +10,21 @@ export class View extends Component {
     componentDidMount(){
         axios.get('/test/list.php')
         .then(response => {
-            // console.log(this.state);
             this.setState({ formdata: response.data});
         })
         .catch(function (error){
             console.log(error);
         })
+
     }
+    
     usersList(){
         return this.state.formdata.map(function(object, i){
             return <RecordList obj={object} key={i} />;
         });
+        
     }
+    
   state = {
     name: "",
     showResults: false
@@ -30,13 +33,8 @@ export class View extends Component {
     event.preventDefault();
     const obj ={
         name: this.state.name,
-    }
-        //    console.log(obj);
-        
-
+    }      
 const encodedString = new Buffer(obj.name).toString('base64');
-// console.log(encodedString)
-
            if(encodedString==="YWRtaW4=")
            {
             this.setState({
@@ -46,6 +44,7 @@ const encodedString = new Buffer(obj.name).toString('base64');
           else{
               alert("Try Again With the Correct Password");
           }
+
         }
         
     

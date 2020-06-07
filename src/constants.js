@@ -36,7 +36,7 @@ export const MAPS_DIR =
 
 export const MAP_META = {
   India: {
-    geoDataFile: `${MAPS_DIR}/india.json`,
+    geoDataFile: `covid/maps/india.json`,
     mapType: MAP_TYPES.COUNTRY,
     graphObjectStates: 'india-states',
     graphObjectDistricts: 'india-districts-2019-734',
